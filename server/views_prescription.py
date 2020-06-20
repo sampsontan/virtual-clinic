@@ -100,7 +100,7 @@ def update_view(request):
     template_data = views.parse_session(
         request,
         {
-            'form_button': "Update Prescription 更新處方",
+            'form_button': "更新處方",
             'form_action': "?pk="+pk,
             'prescription': prescription
         })
