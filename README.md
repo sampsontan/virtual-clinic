@@ -14,7 +14,7 @@
 [![Pulls](https://github-basic-badges.herokuapp.com/pulls/mishal23/virtual-clinic.svg)]()
 [![Issues](https://github-basic-badges.herokuapp.com/issues/mishal23/virtual-clinic.svg)]()
 
-
+ 
 A software to simplify the process of Health Care in hospitals to help the patients, doctor, labs, chemist.
 
 ## Introduction
