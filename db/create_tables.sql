@@ -100,6 +100,7 @@ CREATE TABLE IF NOT EXISTS `prescription` (
 	`patient_id` int UNIQUE,
 	`doctor_id` int UNIQUE,
 	`date` timestamp NOT NULL,
+	`druglist` varchar(100) NOT NULL,
 	`medication` varchar(100) NOT NULL,
 	`instruction` varchar(100) NOT NULL,
 	`active` bool DEFAULT True,
