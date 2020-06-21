@@ -32,7 +32,7 @@ def create_view(request):
                 patient = form.cleaned_data['patient'],
                 doctor = form.cleaned_data['doctor'],
                 date = form.cleaned_data['date'],
-                druglist = forms.cleaned_data['druglist']   # by sam 20200221 to add smart drug list 
+                druglist = forms.cleaned_data['druglist'],   # by sam 20200221 to add smart drug list 
                 medication = form.cleaned_data['medication'],
                 strength = form.cleaned_data['strength'],
                 instruction = form.cleaned_data['instruction'],
