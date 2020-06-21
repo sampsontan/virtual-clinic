@@ -286,6 +286,7 @@ class Prescription(models.Model):
     patient = models.ForeignKey(Account, related_name="prescription_patient",on_delete = models.CASCADE)
     doctor = models.ForeignKey(Account, related_name="prescription_doctor",on_delete = models.CASCADE)
     date = models.DateField()
+    druglist = models.CharField(max_length=100)   # by sam 20200221 to add smart drug list 
     medication = models.CharField(max_length=100)
     strength = models.CharField(max_length=30)
     instruction = models.CharField(max_length=200)
@@ -298,7 +299,8 @@ class Prescription(models.Model):
             'patient': self.patient,
             'doctor': self.doctor,
             'date': self.date,
-            'medication': self.medication,
+            'druglist'  : self.druglist,        # by sam 20200221 to add smart drug list 
+            'medication': self.medication,      
             'strength': self.strength,
             'instruction': self.instruction,
             'refill': self.refill,
