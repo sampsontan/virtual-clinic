@@ -274,8 +274,8 @@ class PrescriptionForm(BasicForm):
     setup_field(doctor)
     date = forms.DateField()
     setup_field(date)
-#    druglist    = forms.CharField(max_length=50)              # by sam 20200221 to add smart drug list 
-#    setup_field(druglist, "Select smart drug list here")    # by sam 20200221 to add smart drug list 
+    druglist    = forms.CharField(max_length=50)              # by sam 20200221 to add smart drug list 
+    setup_field(druglist, "Select smart drug list here")    # by sam 20200221 to add smart drug list 
     medication  = forms.CharField(max_length=50)
     setup_field(medication,"Enter medication here")
     strength = forms.CharField(max_length=30)
@@ -291,6 +291,7 @@ class PrescriptionForm(BasicForm):
         prescription.patient = self.cleaned_data['patient']
         prescription.doctor = self.cleaned_data['doctor']
         prescription.date = self.cleaned_data['date']
+        prescription.druglist = self.cleaned_data['druglist']   # by sam 20200221 to add smart drug list 
         prescription.medication = self.cleaned_data['medication']
         prescription.strength = self.cleaned_data['strength']
         prescription.instruction = self.cleaned_data['instruction']
