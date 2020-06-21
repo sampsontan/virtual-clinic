@@ -30,6 +30,7 @@ class GeneratePdf(View):
             'date': prescription.date,
             'patient_name': prescription.patient,
             'doctor_name': prescription.doctor,
+            'druglist' : prescription.druglist,     # by sam 20200221 to add smart drug list 
             'medication': prescription.medication,
             'instruction': prescription.instruction,
             'strength': prescription.strength,

@@ -100,6 +100,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('date', models.DateField()),
+                ('druglist', models.CharField(max_length=100)),# by sam 20200221 to add smart drug list 
                 ('medication', models.CharField(max_length=100)),
                 ('strength', models.CharField(max_length=30)),
                 ('instruction', models.CharField(max_length=200)),
