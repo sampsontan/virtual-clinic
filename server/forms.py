@@ -1,7 +1,6 @@
 from datetime import date
 
 from django import forms
-import autocomplete_light   #20200622
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 
@@ -275,7 +274,7 @@ class PrescriptionForm(BasicForm):
     setup_field(doctor)
     date = forms.DateField()
     setup_field(date)
-    druglist    = forms.CharField(max_length=50) #forms.ModelChoiceField(queryset=Account.objects.filter(role=Account.ACCOUNT_PATIENT))              # by sam 20200221 to add smart drug list 
+    druglist    = #forms.CharField(max_length=50) #forms.ModelChoiceField(queryset=Account.objects.filter(role=Account.ACCOUNT_PATIENT))              # by sam 20200221 to add smart drug list 
     setup_field(druglist, "Select smart drug list here")    # by sam 20200221 to add smart drug list 
     medication  = forms.CharField(max_length=50)
     setup_field(medication,"Enter medication here")
