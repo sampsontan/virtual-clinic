@@ -1,6 +1,6 @@
 from datetime import date
 from django import forms
-import django-autocomplete-light   #20200625
+import django-autocomplete-light 
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 
