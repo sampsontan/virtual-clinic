@@ -273,21 +273,9 @@ class PrescriptionForm(BasicForm):
     doctor = forms.ModelChoiceField(queryset=Account.objects.filter(role=Account.ACCOUNT_DOCTOR))
     setup_field(doctor)
     date = forms.DateField()
-    setup_field(date)                                           #
-    YEAR_IN_SCHOOL_CHOICES = [                                  
-        (FRESHMAN, 'Freshman'),
-        (SOPHOMORE, 'Sophomore'),
-        (JUNIOR, 'Junior'),
-        (SENIOR, 'Senior'),
-        (GRADUATE, 'Graduate'),
-    ]      
-    druglist    = forms.CharField(  max_length=50                    
-                                    choices=YEAR_IN_SCHOOL_CHOICES,
-                                    default=FRESHMAN,
-    )                                 
-                                                                #
+    setup_field(date)                                           
 
-    #druglist    = forms.CharField(max_length=50)              # by sam 20200221 to add smart drug list 
+    druglist    = forms.CharField(max_length=50)              # by sam 20200221 to add smart drug list 
     setup_field(druglist, "Select smart drug list here")    # by sam 20200221 to add smart drug list 
     medication  = forms.CharField(max_length=50)
     setup_field(medication,"Enter medication here")
