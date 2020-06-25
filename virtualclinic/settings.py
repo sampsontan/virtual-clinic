@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'server',
     'rest_framework',
+    url(r'autocomplete/', include('autocomplete_light.urls')),
 ]
 
 MIDDLEWARE = [
