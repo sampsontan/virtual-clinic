@@ -4,7 +4,6 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 
-from django.db import models
 from server.models import Account, Profile, Hospital, MedicalInfo, MedicalTest, IND_STATES, Appointment, Message, Speciality, APPOINTMENT_TYPE, Symptom
 
 
@@ -276,12 +275,8 @@ class PrescriptionForm(BasicForm):
     date = forms.DateField()
     setup_field(date)                                           
 
-    class Month(models.TextChoices):
-        JAN = '1', "JANUARY"
-        FEB = '2', "FEBRUARY"
-        MAR = '3', "MAR"
 
-    druglist    = forms.CharField(max_length=50, choices=Month.choices, default=Month.JAN)              # by sam 20200221 to add smart drug list 
+    druglist    = forms.CharField(max_length=50)              # by sam 20200221 to add smart drug list 
     setup_field(druglist, "Select smart drug list here")    # by sam 20200221 to add smart drug list 
     medication  = forms.CharField(max_length=50)
     setup_field(medication,"Enter medication here")
