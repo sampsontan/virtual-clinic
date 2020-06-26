@@ -275,7 +275,7 @@ class PrescriptionForm(BasicForm):
     date = forms.DateField()
     setup_field(date)                                           
 
-    druglist    = forms.CharField(max_length=50, choices=IND_STATES, default='Andhra Pradesh')              # by sam 20200221 to add smart drug list 
+    druglist    = forms.CharField(max_length=50)              # by sam 20200221 to add smart drug list 
     setup_field(druglist, "Select smart drug list here")    # by sam 20200221 to add smart drug list 
     medication  = forms.CharField(max_length=50)
     setup_field(medication,"Enter medication here")
