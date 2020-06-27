@@ -14,10 +14,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import include,url
+from ajax_select import urls as ajax_select_urls
 
 admin.autodiscover()
 
 urlpatterns = [
+    # 20200627 place it at whatever base url you like
+    url(r'^ajax_select/', include(ajax_select_urls)),
     url(r'^',include('server.urls',namespace="server")),
     url(r'^admin/', admin.site.urls),
 ]
