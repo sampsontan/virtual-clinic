@@ -283,7 +283,7 @@ class PrescriptionForm(BasicForm):
         ('KFC', 'KFC'),
     )
 
-    forms.CharField(
+    druglist    = forms.CharField(
         max_length=50,
         widget=forms.Select(choices=SHOP1_CHOICES),
     )              # by sam 20200221 to add smart drug list 
