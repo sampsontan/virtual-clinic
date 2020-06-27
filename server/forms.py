@@ -284,10 +284,10 @@ class PrescriptionForm(BasicForm):
     )
 
     druglist    = forms.ModelMultipleChoiceField(
-                    label=_('Materials'), 
+                    label='Druglist', 
                     queryset=Account.objects.filter(role=Account.ACCOUNT_PATIENT), 
                     required=False, 
-                    widget=FilteredSelectMultiple(_('materials'), True))
+                    widget=FilteredSelectMultiple('Druglist', True))
     # by sam 20200221 to add smart drug list 
     setup_field(druglist, "Select smart drug list here")    # by sam 20200221 to add smart drug list 
     medication  = forms.CharField(max_length=50)
