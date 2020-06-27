@@ -14,6 +14,11 @@ IND_STATES = (
 )
 
 
+SHOP1_CHOICES = (
+    ('Food Court', 'Food Court'),
+    ('KFC', 'KFC'),
+)
+
 APPOINTMENT_TYPE = (
     ("Offline", "Offline"), ("Online","Online")
 )
@@ -284,11 +289,6 @@ class Notification(models.Model):
 
 class Prescription(models.Model):
 
-    SHOP1_CHOICES = (
-    ('Food Court', 'Food Court'),
-    ('KFC', 'KFC'),
-
-    )
 
     patient = models.ForeignKey(Account, related_name="prescription_patient",on_delete = models.CASCADE)
     doctor = models.ForeignKey(Account, related_name="prescription_doctor",on_delete = models.CASCADE)
