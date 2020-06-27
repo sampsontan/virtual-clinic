@@ -7,7 +7,9 @@ from django.contrib.auth import authenticate
 
 from server.models import Account, Profile, Hospital, MedicalInfo, MedicalTest, IND_STATES, Appointment, Message, Speciality, APPOINTMENT_TYPE, Symptom
 
-from django.contrib.admin.widgets import FilteredSelectMultiple 
+from django.contrib.admin.widgets import FilteredSelectMultiple
+
+from ajax_select.fields import AutoCompleteSelectField, AutoCompleteSelectMultipleField
 
 def validate_username_available(username):
     """ validator that throws an error if the given username already exists."""
