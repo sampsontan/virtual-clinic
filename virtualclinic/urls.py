@@ -20,4 +20,6 @@ admin.autodiscover()
 urlpatterns = [
     url(r'^',include('server.urls',namespace="server")),
     url(r'^admin/', admin.site.urls),
+    url('^searchableselect/', include('searchableselect.urls')),
+
 ]
