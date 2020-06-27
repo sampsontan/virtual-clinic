@@ -283,10 +283,17 @@ class Notification(models.Model):
 
 
 class Prescription(models.Model):
+
+    SHOP1_CHOICES = (
+    ('Food Court', 'Food Court'),
+    ('KFC', 'KFC'),
+
+    )
+
     patient = models.ForeignKey(Account, related_name="prescription_patient",on_delete = models.CASCADE)
     doctor = models.ForeignKey(Account, related_name="prescription_doctor",on_delete = models.CASCADE)
     date = models.DateField()
-    druglist = models.CharField(max_length=100)   # by sam 20200221 to add smart drug list 
+    druglist = models.CharField(max_length=100, choices=SHOP1_CHOICES)   # by sam 20200221 to add smart drug list 
     medication = models.CharField(max_length=100)
     strength = models.CharField(max_length=30)
     instruction = models.CharField(max_length=200)
