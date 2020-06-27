@@ -285,12 +285,8 @@ class PrescriptionForm(BasicForm):
         ('KFC', 'KFC'),
     )
 
-    druglist    = AutoCompleteSelectField('Druglist', required=False, help_text=None)
-    
-    #forms.CharField(
-    #    max_length=50,
-    #    widget=forms.Select(choices=SHOP1_CHOICES),
-    #)              # by sam 20200221 to add smart drug list 
+    #TODO declare ajax_select.lookup_channel druglist    = AutoCompleteSelectField('Druglist', required=False, help_text=None)
+    druglist    = forms.CharField(max_length=50)
     setup_field(druglist, "Select smart drug list here")    # by sam 20200221 to add smart drug list 
     medication  = forms.CharField(max_length=50)
     setup_field(medication,"Enter medication here")
