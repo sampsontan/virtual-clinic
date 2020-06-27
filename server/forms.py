@@ -276,6 +276,11 @@ class PrescriptionForm(BasicForm):
     setup_field(date)                                           
 
 
+    SHOP1_CHOICES = (
+        ('Food Court', 'Food Court'),
+        ('KFC', 'KFC'),
+    )
+
     druglist    = forms.CharField(
         max_length=50,
         widget=forms.Select(choices=SHOP1_CHOICES),
