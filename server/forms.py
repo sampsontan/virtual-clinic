@@ -4,8 +4,10 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 
+
 from server.models import Account, Profile, Hospital, MedicalInfo, MedicalTest, IND_STATES, Appointment, Message, Speciality, APPOINTMENT_TYPE, Symptom
 
+from django.contrib.admin.widgets import FilteredSelectMultiple #20200627
 
 def validate_username_available(username):
     """ validator that throws an error if the given username already exists."""
