@@ -7,7 +7,7 @@ from django.contrib.auth import authenticate
 
 from server.models import Account, Profile, Hospital, MedicalInfo, MedicalTest, IND_STATES, Appointment, Message, Speciality, APPOINTMENT_TYPE, Symptom
 
-from django.contrib.admin.widgets import FilteredSelectMultiple #20200627
+from django.contrib.admin.widgets import FilteredSelectMultiple 
 
 def validate_username_available(username):
     """ validator that throws an error if the given username already exists."""
@@ -283,10 +283,12 @@ class PrescriptionForm(BasicForm):
         ('KFC', 'KFC'),
     )
 
-    druglist    = forms.CharField(
-        max_length=50,
-        widget=forms.Select(choices=SHOP1_CHOICES),
-    )              # by sam 20200221 to add smart drug list 
+    druglist    = forms.ModelMultipleChoiceField(
+                    label=_('Materials'), 
+                    queryset=Account.objects.filter(role=Account.ACCOUNT_PATIENT), 
+                    required=False, 
+                    widget=FilteredSelectMultiple(_('materials'), True))
+    # by sam 20200221 to add smart drug list 
     setup_field(druglist, "Select smart drug list here")    # by sam 20200221 to add smart drug list 
     medication  = forms.CharField(max_length=50)
     setup_field(medication,"Enter medication here")
