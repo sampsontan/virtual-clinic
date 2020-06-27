@@ -285,10 +285,12 @@ class PrescriptionForm(BasicForm):
         ('KFC', 'KFC'),
     )
 
-    druglist    = forms.CharField(
-        max_length=50,
-        widget=forms.Select(choices=SHOP1_CHOICES),
-    )              # by sam 20200221 to add smart drug list 
+    druglist    = AutoCompleteSelectField('Druglist', required=False, help_text=None)
+    
+    #forms.CharField(
+    #    max_length=50,
+    #    widget=forms.Select(choices=SHOP1_CHOICES),
+    #)              # by sam 20200221 to add smart drug list 
     setup_field(druglist, "Select smart drug list here")    # by sam 20200221 to add smart drug list 
     medication  = forms.CharField(max_length=50)
     setup_field(medication,"Enter medication here")
